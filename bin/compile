@@ -4,7 +4,7 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
-ls
+ls /tmp/buildpacks/custom
 echo "-----> Compiling lua"
 cd /opt/src/lua
 make
