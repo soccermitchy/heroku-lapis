@@ -25,7 +25,7 @@ make install
 
 cd $BUILD_DIR
 echo "-----> Installing luarocks for app"
-while read -r line; do
+cat $BUILD_DIR/app.rocks | while read -r line; do
 	echo "-----> Luarock: " $line
 	luarocks install $line
-done <<< $BUILD_DIR/app.rocks
+done
