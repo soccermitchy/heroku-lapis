@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+cat << EOF
+---
+config_vars:
+  PATH: /app/bin:$PATH
+  LD_LIBRARY_PATH: /app/packages/lib:$LB_LIBRARY_PATH
+EOF
