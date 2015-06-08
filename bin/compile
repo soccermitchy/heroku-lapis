@@ -4,20 +4,20 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
-ls /tmp/buildpacks/custom
+# ls /tmp/buildpacks/custom
 echo "-----> Compiling lua"
-cd /opt/src/lua
+cd /tmp/buildpacks/custom/opt/src/lua
 make
 make install
 
 echo "-----> Compiling openresty"
-cd /opt/src/openresty
+cd /tmp/buildpacks/custom/opt/src/openresty
 ./configure
 make
 make install
 
 echo "-----> Compiling luarocks"
-cd /opt/src/luarocks
+cd /tmp/buildpacks/custom/opt/src/luarocks
 ./configure
 make
 make install
