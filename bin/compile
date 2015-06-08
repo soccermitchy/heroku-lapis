@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
 BUILD_DIR=$1
@@ -25,7 +25,7 @@ make install
 
 cd $BUILD_DIR
 echo "-----> Installing luarocks for app"
-cat $BUILD_DIR/app.rocks | while read -r line; do
+while read -r line; do
 	echo "-----> Luarock: " $line
 	luarocks install $line
-done
+done <<< $BUILD_DIR/app.rocks
