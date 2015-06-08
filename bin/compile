@@ -7,18 +7,18 @@ ENV_DIR=$3
 # ls /tmp/buildpacks/custom
 echo "-----> Compiling lua"
 cd /tmp/buildpacks/custom/opt/src/lua
-make
-make install
+make linux
+make install PREFIX=/app
 
 echo "-----> Compiling openresty"
 cd /tmp/buildpacks/custom/opt/src/openresty
-./configure
+./configure --prefix=/app
 make
 make install
 
 echo "-----> Compiling luarocks"
 cd /tmp/buildpacks/custom/opt/src/luarocks
-./configure
+./configure --prefix=/app
 make
 make install
 
