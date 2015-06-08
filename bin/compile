@@ -4,7 +4,8 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
-# ls /tmp/buildpacks/custom
+PATH=/app/bin:$PATH
+
 echo "-----> Compiling lua"
 cd /tmp/buildpacks/custom/opt/src/lua
 make linux
